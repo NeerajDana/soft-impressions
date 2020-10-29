@@ -13,7 +13,7 @@ self.addEventListener("install", (event) => {
       console.log("cacheing the assets");
       cache
         .addAll(assets)
-        .then((d) => console.loh("done caching", d))
+        .then((d) => console.log("done caching", d))
         .catch((err) => {
           console.log("in addAll", err);
         });
