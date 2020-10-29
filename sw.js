@@ -1,4 +1,4 @@
-const staticCacheName = "soft-static";
+const staticCacheName = "soft-static-v.0.1";
 const assets = [
   "/soft-impressions/",
   "/soft-impressions/images/1.png",
@@ -20,6 +20,15 @@ self.addEventListener("install", (event) => {
 });
 self.addEventListener("activate", (event) => {
   console.log("service worker activated");
+  caches.keys().then((key) => {
+    return Promise.all(
+      keys
+        .filter((a) => a != staticCacheName)
+        .map((a) => {
+          caches.delete(a);
+        })
+    );
+  });
 });
 self.addEventListener("fetch", (event) => {
   event.respondWith(
