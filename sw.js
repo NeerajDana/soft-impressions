@@ -7,7 +7,7 @@ const assets = [
 self.addEventListener("install", (event) => {
   console.log("service worker installed");
   event.waitUntil(
-    catches.open(staticCacheName).then((cache) => {
+    caches.open(staticCacheName).then((cache) => {
       cache.addAll(assets);
     })
   );
