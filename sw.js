@@ -1,6 +1,7 @@
 const staticCacheName = "soft-static-v.0.2";
 const assets = [
   "/soft-impressions/",
+  "/soft-impressions/index.html",
   "/soft-impressions/images/illustrations/1.png",
   "/soft-impressions/images/illustrations/2.png",
 
