@@ -1,7 +1,7 @@
 const staticCacheName = "soft-static";
 const assets = [
-  "/",
-  "/static/images/1.png",
+  "/soft-impressions/",
+  "/soft-impressions/static/images/1.png",
   "https://fonts.googleapis.com/css?family=Roboto:300,400,500",
 ];
 self.addEventListener("install", (event) => {
