@@ -10,7 +10,7 @@
   "icons": [
     {
       "purpose": "any maskable",
-      "src": "/icons/maskable_icon.png",
+      "src": "/soft-impressions/icons/maskable_icon.png",
       "sizes": "512x512",
       "type": "image/png"
     }
