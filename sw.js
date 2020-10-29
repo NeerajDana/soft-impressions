@@ -24,7 +24,7 @@ self.addEventListener("fetch", (event) => {
         return res || fetch(event.request);
       })
       .catch((err) => {
-        console.log("in fetch", err);
+        // console.log("in fetch", err);
       })
   );
   console.log("event", event);
