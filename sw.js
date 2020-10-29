@@ -9,7 +9,12 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(staticCacheName).then((cache) => {
       console.log("cacheing the assets");
-      cache.addAll(assets).then((d) => console.loh("done caching", d));
+      cache
+        .addAll(assets)
+        .then((d) => console.loh("done caching", d))
+        .catch((err) => {
+          console.log("in addAll", err);
+        });
     })
   );
 });
