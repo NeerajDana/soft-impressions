@@ -1,23 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "./tailwind.css";
+import { motion } from "framer-motion";
 
+import Header from "./components/Header";
+const img = require("./images/illustrations/2.png");
 function App() {
+  console.log(img);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="h-screen App bg-primary">
+      <div className="flex flex-col items-center justify-center h-full px-8 md:justify-around md:flex-row">
+        <div className="py-8 ">
+          <img src={img.default} />
+        </div>
+        <div className="py-8 ">
+          <div className="flex flex-col justify-between p-8 bg-white rounded-xl">
+            <h1 className="text-gray-800">Manage Files</h1>
+            <p className="mt-4 text-sm text-gray-600">
+              Our service was designed to give you the full flexibility when it
+              comes to managing the files.
+            </p>
+            <div className="flex items-center justify-between mt-8">
+              <span>skip</span>
+              <div className="flex">
+                <div className="p-1 mx-1 border rounded-full bg-primary border-primary "></div>
+                <div className="p-1 mx-1 border rounded-full border-primary "></div>
+                <div className="p-1 mx-1 border rounded-full border-primary "></div>
+              </div>
+              <div>
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 56 56"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="28" cy="28" r="28" fill="#5D54C1" />
+                  <path
+                    d="M38 28H18"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M31 35L38 28L31 21"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

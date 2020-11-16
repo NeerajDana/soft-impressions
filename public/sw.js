@@ -1,7 +1,10 @@
-const staticCacheName = "soft-static";
+const staticCacheName = "soft-static-v.0.2";
 const assets = [
-  "/",
-  "/static",
+  "/soft-impressions/",
+  "/soft-impressions/index.html",
+  "/soft-impressions/images/illustrations/1.png",
+  "/soft-impressions/images/illustrations/2.png",
+
   "https://fonts.googleapis.com/css?family=Roboto:300,400,500",
 ];
 self.addEventListener("install", (event) => {
@@ -11,7 +14,7 @@ self.addEventListener("install", (event) => {
       console.log("cacheing the assets");
       cache
         .addAll(assets)
-        .then((d) => console.loh("done caching", d))
+        .then((d) => console.log("done caching", d))
         .catch((err) => {
           console.log("in addAll", err);
         });
@@ -20,6 +23,15 @@ self.addEventListener("install", (event) => {
 });
 self.addEventListener("activate", (event) => {
   console.log("service worker activated");
+  caches.keys().then((keys) => {
+    return Promise.all(
+      keys
+        .filter((a) => a != staticCacheName)
+        .map((a) => {
+          caches.delete(a);
+        })
+    );
+  });
 });
 self.addEventListener("fetch", (event) => {
   event.respondWith(
